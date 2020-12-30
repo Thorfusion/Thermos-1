@@ -1,13 +1,14 @@
-# THERMOS IS NO LONGER BEING DEVELOPED. IF YOU MAKE AN ISSUE, IT WILL NOT BE RESOLVED AND WILL JUST BE CLOSED.
+# Note
+This project is dedicated to renewing the ability for Minecraft servers to use native bukkit plugins along with Forge mods.
 
-# Thermos (Те́рмос)(TH啦)
+---
 
-[Русский](https://cyberdynecc.github.io/Thermos/#googtrans(en|ru)) [Deutsch](https://cyberdynecc.github.io/Thermos/#googtrans(en|de)) [Français](https://cyberdynecc.github.io/Thermos/#googtrans(en|fr)) [Español](https://cyberdynecc.github.io/Thermos/#googtrans(en|es)) [Português](https://cyberdynecc.github.io/Thermos/#googtrans(en|pt)) [Nederlands](https://cyberdynecc.github.io/Thermos/#googtrans(en|nl)) [汉语](https://cyberdynecc.github.io/Thermos/#googtrans(en|jp)) [日本語](https://cyberdynecc.github.io/Thermos/#googtrans(en|zh)) [조선말](https://cyberdynecc.github.io/Thermos/#googtrans(en|ko)) [हिन्दी](https://cyberdynecc.github.io/Thermos/#googtrans(en|hi))
+# Thermos 1.7.10
 
 ![Thermos](thermos_icon.png)
-![Graph](http://i.mcstats.org/Thermos/Global+Statistics@2x.borderless.png)
+<!--- ![Graph](http://i.mcstats.org/Thermos/Global+Statistics@2x.borderless.png) --->
 
-[![Build Status](https://travis-ci.org/CyberdyneCC/Thermos.svg?branch=master)](https://travis-ci.org/CyberdyneCC/Thermos)
+[![Build Status](https://travis-ci.com/MCImaginarium/Thermos.svg?branch=master)](https://travis-ci.com/mcimaginarium/Thermos)
 ![Minecraft Forge v10.13.4.1614][forge]
 ![Minecraft v1.7.10][mc]
 ![Java JDK v1.8][java]
@@ -23,63 +24,52 @@ Advantages over KCauldron:
 + Better world protection (Forge stuff doesn't bypass Bukkit plugins!)
 + Many patches that KCauldron didn't get from Spigot
 + Dupe glitch fixes
-
+---
 
 ## Installation
-Click [here](http://cyberdynecc.github.io/Thermos/install)
+Click [here](https://mcimaginarium.github.io//Thermos/install)
 
+---
 ## Downloads
-You can download the pre-built packages from [here](https://github.com/CyberdyneCC/Thermos/releases). 
+You can download the pre-built packages from [here](https://github.com/mcimaginarium/Thermos/releases). 
 
 **Thermos is still in beta and you may encounter issues in using it with your server. You have been warned!**
 
 P.S. **PLEASE** look at the release notes before downloading! :smile:
 
-##Installing WarmRoast
-[Tutorial Video](https://youtu.be/c0ffjooX7Jw)
-
-## Chat
-
-Feel free to drop in on the CyberdyneCC Discord chat [here](https://discord.gg/0yZaOwSQocQHebex)
-
+---
 ## Donate/Support
 
-You can pledge to support Robotia and his work through a monthly [Patreon](https://www.patreon.com/robotia) donation or a one-time [PayPal](http://paypal.me/robotia) donation.
+N\A
 
+---
 ## Contributing
 
-Please read the [guide](https://github.com/CyberdyneCC/Thermos/blob/master/CONTRIBUTING.md) on how to contribute - Thermos always needs improvements :smile: 
+Please read the [guide](https://mcimaginarium.github.io//Thermos/contributing) on how to contribute - Thermos always needs improvements :smile: 
 
-
-
-
+---
 ## Build Requirements
 * Java 8u101 JDK or higher
 * `JAVA_HOME` defined on your OS
 
-## Building CyberdyneCC/Thermos
+---
+## Setup the Workspace
 * Checkout project
   * You can use IDE or clone from console:
-  `git clone https://github.com/CyberdyneCC/Thermos.git`
-* Setup
-  * Auto: `setup.sh`
-  * Manual:
-  `git submodule update --init --recursive`
-* Build
-  * This process downloads minecraft and apply patches
-  * If you have gradle integration in IDE - you can still use gui
-  * Auto: `build.sh`
-  * Manual:
-  `./gradlew setupCauldron jar`
-
+  `git clone --recurse-submodules https://github.com/Rus-Minecraft/Thermos.git`
+* Creating the workspace
+  * To create the workspace just run the command: `./gradlew -PforgeBuildNumber='1614' setupCauldron`
+  * To create the patches with the changes made just run: `./gradlew -PforgeBuildNumber='1614' genPatches`
+* Building
+  * Before you can build you must first setup the workspace!
+  * To build just run the command: `./gradlew -PforgeBuildNumber='1614' installbundle`
+  * All builds will be in `build/distributions`
+* Updating sources
+  * Update sources: `git pull origin master`
+  * Recreate the workspace: `./gradlew -PforgeBuildNumber='1614' clean setupCrucible`
 All builds will be in `build/distributions`
-  
-## Updating sources
-* Update sources
-  * `git pull origin master`
-* Re apply patches & build binaries
-  * `./gradlew clean setupCauldron jar`
 
+---
 ## Known Caveats, use provided fixes at your own risk.
 
 ✔ Aether II: isDonor function can lock up servers. [Fixed]
@@ -102,7 +92,7 @@ All builds will be in `build/distributions`
 
 ✔ SkinsRestorer: Latest working version is 10.4.4
 
-[Fixed]: http://gogs.tcpr.ca/TCPR/Fixes "Fixed"
+[Fixed]: https://github.com/MCImaginarium/Thermos-Fixes "Fixed"
 [forge]: https://img.shields.io/badge/Minecraft%20Forge-v10.13.4.1614-green.svg "Minecraft Forge v10.13.4.1614"
 [mc]: https://img.shields.io/badge/Minecraft-v1.7.10-green.svg "Minecraft 1.7.10"
 [java]: https://img.shields.io/badge/Java%20JDK-v1.8-blue.svg "Java JDK 8"
